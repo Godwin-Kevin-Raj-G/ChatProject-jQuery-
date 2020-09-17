@@ -1,0 +1,44 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+section {
+    margin-top: 100px;
+    margin-left: 200px;
+    height: 500px;
+    width: 400px;
+    border: 1px solid;
+}
+
+aside {
+    margin-left: 800px;
+    margin-top: -505px;
+    height: 500px;
+    width: 400px;
+    border: 1px solid;
+}
+
+#us1 {
+    overflow: scroll;
+    height: 500px;
+}
+
+#us2 {
+    overflow: scroll;
+    height: 500px;
+}
+
+#footer1 {
+    margin-top: 20px;
+    margin-left: 300px;
+}
+
+#footer2 {
+    margin-left: 900px;
+    margin-top: -20px;
+}
+
+p {
+    background-color: greenyellow;
+}
