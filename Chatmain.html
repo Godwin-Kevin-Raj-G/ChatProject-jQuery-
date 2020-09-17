@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="chat.css">
+
+<head>
+    <title>ChatBox</title>
+    <script src="jquery-3.4.1.min.js"></script>
+    <!-- <script src="chat.js"></script> -->
+    <script>
+        $(document).ready(function() {
+
+            // var Time = new Date()
+            // var textTime = Time.getHours() + ":" + Time.getMinutes()
+            // var hours = (hours+24-2)%24;
+            // var t = new Date();
+            // var h = t.getHours();
+            // var m = t.getMinutes();
+            // var textTime = (h > 12) ? (h - 12 + ':' + m + ' AM') : (h + ':' + m + ' PM');
+            var time = new Date();
+
+            var textTime = time.toLocaleString('en-US', {
+                hour: 'numeric',
+                minute: 'numeric',
+                hour12: true
+            })
+
+            $("#btn1").click(function() {
+                var msg = document.getElementById("txt").value
+
+                $("#US1").append("<p style=\"float:right\" >" + msg + " " + "<span style='font-size:10px'>" + " " + textTime + "</span>" + "</p><br><br><br>").attr("value", " ")
+                $("#US2").append("<p style=\"float:left\">" + msg + " " + "<span style='font-size:10px'>" + " " + textTime + "</span>" + "</p><br><br><br>")
+
+
+                scrolfunction();
+            })
+
+
+
+            $("#btn2").click(function() {
+                var msg2 = document.getElementById("txt1").value
+
+                $("#US1").append("<p style=\"float:left;\">" + msg2 + " " + "<span style='font-size:10px'>" + " " + textTime + "</span>" + "</p><br><br><br>")
+                $("#US2").append("<p style=\"float:right;\">" + msg2 + " " + "<span style='font-size:10px'>" + " " + textTime + "</span>" + "</p><br><br><br>")
+                scrolfunction1();
+            })
+        })
+
+        function scrolfunction() {
+            var elemnt1 = document.getElementById("US1")
+            elemnt1.scrollTop = elemnt1.scrollHeight
+
+        }
+
+        function scrolfunction1() {
+            var element2 = document.getElementById("US2")
+            element2.scrollTop = element2.scrollHeight
+                // element2.scrollTop=element2.scrollHeight
+        }
+    </script>
+
+</head>
+
+<body>
+    <header>
+        ChatBox
+    </header>
+    <section>
+        <div id="image">
+            <img src="head.jpeg" id="c1">
+            <img src="cam.svg" id="c2">
+            <img src="video.svg" id="c3">
+            <img src="sta.svg" id="c4">
+            <img src="attach.svg" id="c5">
+
+            <div id="res">
+                <h4 class="res">kevin</h4>
+            </div>
+
+            <div id="US1">
+
+            </div>
+
+        </div>
+
+    </section>
+    <aside>
+        <div id="image1">
+            <img src="ss.jpeg" id="c1">
+            <img src="cam.svg" id="c2">
+            <img src="video.svg" id="c3">
+            <img src="sta.svg" id="c4">
+            <img src="attach.svg" id="c5">
+            <div id="res">
+                <h4 class="res">RaniGeorge</h4>
+            </div>
+            <div id="US2">
+
+            </div>
+
+        </div>
+
+    </aside>
+    <div id="manu">
+        <b></b> <input type="text" id="txt">
+        <div id=bin>
+            <button id="btn1"><img src="send.svg.svg" id="hh"></button>
+        </div>
+    </div>
+    <div id="unknown">
+        <b></b> <input type="text" id="txt1">
+        <div id=bin1>
+            <button id="btn2"><img src="send.svg.svg" id="hh1"></button>
+        </div>
+    </div>
+</body>
+
+</html>
